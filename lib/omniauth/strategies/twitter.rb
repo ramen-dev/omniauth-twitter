@@ -61,6 +61,10 @@ module OmniAuth
         old_request_phase
       end
 
+      def callback_url
+        options[:redirect_uri] || super
+      end
+      
       private
 
       def image_url
