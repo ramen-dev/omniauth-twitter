@@ -62,7 +62,7 @@ module OmniAuth
       end
 
       def callback_url
-        options[:redirect_uri] || super
+        options[:redirect_uri] || request.params['redirect_uri'] || super
       end
       
       private
